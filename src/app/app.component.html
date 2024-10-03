@@ -1,0 +1,54 @@
+<po-container>
+  <h1>Tela de cadastro</h1>
+  <form [formGroup]="formGroup">
+    <div class="po-row po-p-0 po-mt-2">
+      <po-input
+        class="po-sm-12 po-p-0"
+        formControlName="fullName"
+        p-label="Nome completo"
+      ></po-input>
+    </div>
+    <div class="po-row po-p-0 po-mt-2">
+      <po-email
+        class="po-sm-6 po-pl-0"
+        formControlName="email"
+        p-label="E-mail"
+        p-error-pattern="Digite um e-mail válido"
+      ></po-email>
+      <po-datepicker
+        class="po-sm-6 po-pr-0"
+        p-label="Date de nascimento"
+        formControlName="birthDate"
+      ></po-datepicker>
+    </div>
+    <div class="po-row po-mt-2">
+      <po-combo
+        class="po-sm-6 po-pl-0"
+        p-label="Estado"
+        formControlName="state"
+        [p-options]="[
+          { value: 'SP', label: 'São Paulo' },
+          { value: 'RJ', label: 'Rio de Janeiro' },
+          { value: 'BH', label: 'Belo Horizonte' }
+        ]"
+      ></po-combo>
+      <po-radio-group
+        class="po-sm-6 po-pr-0"
+        p-label="Sexo"
+        formControlName="sex"
+        [p-options]="[
+          { value: '1', label: 'Feminino' },
+          { value: '2', label: 'Masculino' }
+        ]"
+      ></po-radio-group>
+    </div>
+    <div class="po-row po-p-0 po-mt-2">
+      <po-textarea
+        class="po-sm-12 po-p-0"
+        p-label="Objetivos"
+        formControlName="goals"
+        [p-rows]="5"
+      ></po-textarea>
+    </div>
+  </form>
+</po-container>
